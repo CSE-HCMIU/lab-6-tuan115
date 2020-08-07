@@ -71,6 +71,6 @@ void convert(char* num) {
     }
 }
 int main() {
-    convert("9132");
+    convert("1234");
     return 0;
 }
