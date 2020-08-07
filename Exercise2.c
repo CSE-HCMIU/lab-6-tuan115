@@ -11,8 +11,22 @@ Ex:
 #include <stdlib.h>
 
 int ex2(int n, char *str[]){
-	//your codes here
+		int i, j;
+	char temp;
+	for (i = 0; str[i]; i++)
+	{
+		for (j = i + 1; str[j]; j++)
+		{
+			if (str[j] < str[i])
+			{
+				temp = str[j];
+				str[j] = str[i];
+				str[i] = &temp;
+			}
+		}
+	}
 }
+
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
@@ -24,6 +38,11 @@ int main(int argc, char *argv[]) {
 	}
 
 	ex2(n, str);
+	printf("enter a string:");
+	gets(str);
+	printf("%s in ascending order is:", str);
+	printf("%s\n", str);
+	getch();
 		
 	return 0;
 }
